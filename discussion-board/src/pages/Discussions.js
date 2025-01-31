@@ -6,7 +6,7 @@ const Discussions = () => {
     const [likes, setLikes] = useState({});
     const [dislikes, setDislikes] = useState({});
 
-    // Load discussions, likes, and dislikes from localStorage
+    // Load discussions, likes, and dislikes from localStorage 
     useEffect(() => {
         const storedDiscussions = JSON.parse(localStorage.getItem('discussions')) || [];
         setDiscussions(storedDiscussions);
@@ -17,20 +17,20 @@ const Discussions = () => {
         setDislikes(storedDislikes);
     }, []);
 
-    // Handle like action
-    const handleLike = (id) => {
+     // Handle like action (used some help from AI (ChatGPT))
+     const handleLike = (id) => {
         const updatedLikes = { ...likes, [id]: (likes[id] || 0) + 1 };
         setLikes(updatedLikes);
         localStorage.setItem('likes', JSON.stringify(updatedLikes));
     };
 
-    // Handle dislike action
+    // Handle dislike action (used some help from AI (ChatGPT))
     const handleDislike = (id) => {
         const updatedDislikes = { ...dislikes, [id]: (dislikes[id] || 0) + 1 };
         setDislikes(updatedDislikes);
         localStorage.setItem('dislikes', JSON.stringify(updatedDislikes));
     };
-
+    
     return (
         <div className="container my-5 p-4 bg-dark text-white rounded shadow">
             <h1 className="text-center mb-4">Discussions</h1>

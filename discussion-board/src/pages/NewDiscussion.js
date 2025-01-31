@@ -9,6 +9,7 @@ const NewDiscussion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Used some help from AI (ChatGPT) for handling local storage operations
         const storedDiscussions = JSON.parse(localStorage.getItem('discussions')) || [];
 
         const newDiscussion = {
